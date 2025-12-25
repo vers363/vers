@@ -12,7 +12,23 @@
     background-color: #ffffff; /* white background */
     color: #222; /* default text color */
   }
-
+.details-panel {
+  display: none; /* Hidden by default */
+  background: #f4f4f4;
+  padding: 10px;
+  border-radius: 8px;
+  margin-top: 10px;
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 14px;
+}
+.color-swatch {
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+  display: inline-block;
+  margin: 0 5px;
+  border: 1px solid #000;
+}
   header {
     background-color: #d10000; /* strong red */
     color: #ffffff; /* white text */
@@ -142,16 +158,28 @@ footer .social:hover {
   <h2>Our Shoes</h2>
   
     <div class="product">
-    <image src="css image/air-force-1.jpg" alt="air force" width="250"
-    <h3>AIR force</h3>
-    <p>₹2,199</p>
-  </div>
+  <img src="css image/air-force-1.jpg" alt="air force" width="250" onclick="toggleDetails('info-airforce')" style="cursor:pointer;">
+  <h3>AIR force</h3>
+  <p>₹2,199</p>
   
-  <div class="product">
-    <img src="css image/joordan-blue.jpg" alt="nike air jordan 1" width="250">
-    <h3>nike air jordan</h3>
-    <p>₹2799</p>
+  <div id="info-airforce" class="details-panel">
+    <strong>Sizes:</strong> 7, 8, 9, 10 <br>
+    <strong>Colors:</strong> 
+    <span class="color-swatch" style="background: white;"></span> White
   </div>
+</div>
+
+<div class="product">
+  <img src="css image/joordan-blue.jpg" alt="nike air jordan 1" width="250" onclick="toggleDetails('info-jordan')" style="cursor:pointer;">
+  <h3>nike air jordan</h3>
+  <p>₹2,799</p>
+  
+  <div id="info-jordan" class="details-panel">
+    <strong>Sizes:</strong> 8, 9, 11 <br>
+    <strong>Colors:</strong> 
+    <span class="color-swatch" style="background: blue;"></span> Blue
+  </div>
+</div>
 
   <div class="product">
     <img src="css image/jordan-gold.jpg" alt="nike air jordan" width="250">
@@ -197,6 +225,7 @@ footer .social:hover {
   </footer>
 </body>
 </html>
+
 
 
 
