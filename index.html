@@ -211,10 +211,16 @@ footer .social:hover {
     <p>₹2,690</p>
   </div>
      <div class="product">
-    <img src="css image/nike dunk (red).webp" alt="NIKE DUNK" width="250">
-    <h3>NIKE DUNK</h3>
-    <p>₹2,699</p>
+  <img src="css image/nike dunk (red).webp" alt="nike dunk" width="250" onclick="toggleDetails('info-nikedunk')" style="cursor:pointer;">
+  <h3>NIKE DUNK LOW RETRO SP</h3>
+  <p>₹2,999</p>
+  
+  <div id="NIKE DUNK" class="details-panel">
+    <strong>Sizes:</strong> 7, 8, 9, 10 <br>
+    <strong>Colors:</strong> 
+    <span class="color-swatch" style="background: white;"></span> RED,GREEN
   </div>
+</div>
    <script>
 function toggleDetails(id) {
   var panel = document.getElementById(id);
@@ -240,6 +246,7 @@ function toggleDetails(id) {
   </footer>
 </body>
 </html>
+
 
 
 
