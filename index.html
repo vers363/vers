@@ -99,7 +99,6 @@ h3 { margin: 15px 0 5px; text-transform: capitalize; }
 .gold   { background-color: gold; }
 .black  { background-color: black; }
 .violet { background-color: violet; }
-
 #cart-sidebar {
     position: fixed;
     right: -300px;
@@ -112,23 +111,16 @@ h3 { margin: 15px 0 5px; text-transform: capitalize; }
     z-index: 1000;
     padding: 20px;
     display: flex;
-    flex-direction: column;
+    flex-direction: column; /* This stacks items vertically */
     color: black;
-}  
-/* Cart Sidebar Style */
-#cart-sidebar {
-    position: fixed;
-    right: -300px;
-    top: 0;
-    width: 300px;
-    height: 100%;
-    background: white;
-    box-shadow: -2px 0 5px rgba(0,0,0,0.5);
-    transition: 0.3s;
-    z-index: 1000;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
+}
+
+#cart-items {
+    flex-grow: 1;      /* This takes up all available space */
+    overflow-y: auto;  /* This adds a scrollbar if you have many items */
+    margin-bottom: 20px;
+}
+
 }
 
 /* Add to Cart Button */
@@ -620,6 +612,7 @@ window.location.href = "https://ig.me/m/vers.shoestore?text=" + msg;
   </footer>
 </body>
 </html>
+
 
 
 
