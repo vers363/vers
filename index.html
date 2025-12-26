@@ -349,6 +349,8 @@ footer .social:hover {
       </div>
       
       <button class="add-to-cart" onclick="addToCart('AIR force', '₹2,199')">Add to Cart</button>
+     <button class="add-to-cart" onclick="addToCart('new balaNCE', '₹2,199')">Add to Cart</button>
+      <button class="add-to-cart" onclick="addToCart('NIKE JORDAN', '₹2,799')">Add to Cart</button>
     </div>
   </div>
 
@@ -604,7 +606,7 @@ function toggleCart() {
 
 function updateCartUI() {
     const list = document.getElementById('cart-items');
-    list.innerHTML = cart.map(item => `<p>${item.name} - ${item.price}</p>`).join('');
+   list.innerHTML = cart.map(item => `<p>${item.name}- ${item.price}</p>`).join('');
 }
 
 function sendToInstagram() {
@@ -615,6 +617,7 @@ window.location.href = "https://ig.me/m/vers.shoestore?text=" + msg;
   </footer>
 </body>
 </html>
+
 
 
 
