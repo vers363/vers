@@ -100,10 +100,25 @@ h3 { margin: 15px 0 5px; text-transform: capitalize; }
 .black  { background-color: black; }
 .violet { background-color: violet; }
 
+#cart-sidebar {
+    position: fixed;
+    right: -300px;
+    top: 0;
+    width: 300px;
+    height: 100%;
+    background: white;
+    box-shadow: -2px 0 5px rgba(0,0,0,0.5);
+    transition: 0.3s;
+    z-index: 1000;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    color: black;
+}  
 /* Cart Sidebar Style */
 #cart-sidebar {
     position: fixed;
-    right: -300px; /* Starts hidden */
+    right: -300px;
     top: 0;
     width: 300px;
     height: 100%;
@@ -333,7 +348,7 @@ footer .social:hover {
         </div>
       </div>
       
-      <button class="add-to-cart">Add to Cart</button>
+      <button class="add-to-cart" onclick="addToCart('AIR force', '₹2,199')">Add to Cart</button>
     </div>
   </div>
 
@@ -593,13 +608,14 @@ function updateCartUI() {
 }
 
 function sendToInstagram() {
-    const msg = encodeURIComponent("I want to`http buy: " + cart.map(i => i.name).join(", "));
-    window.location.href ="https://instagram.com/vers.shoestore"?text=${msg}`;
+   const msg = encodeURIComponent("I want to buy: " + cart.map(i => i.name).join(", "));
+window.location.href = "https://ig.me/m/vers.shoestore?text=" + msg;
 }
 </script>
   </footer>
 </body>
 </html>
+
 
 
 
