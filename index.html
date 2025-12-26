@@ -89,6 +89,7 @@ h3 { margin: 15px 0 5px; text-transform: capitalize; }
   display: inline-block;
 }
 
+/* Color Classes */
 .white  { background-color: white; }
 .grey   { background-color: #888; }
 .blue   { background-color: blue; }
@@ -98,6 +99,22 @@ h3 { margin: 15px 0 5px; text-transform: capitalize; }
 .gold   { background-color: gold; }
 .black  { background-color: black; }
 .violet { background-color: violet; }
+
+/* Cart Sidebar Style */
+#cart-sidebar {
+    position: fixed;
+    right: -300px; /* Starts hidden */
+    top: 0;
+    width: 300px;
+    height: 100%;
+    background: white;
+    box-shadow: -2px 0 5px rgba(0,0,0,0.5);
+    transition: 0.3s;
+    z-index: 1000;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
 
 /* Add to Cart Button */
 .add-to-cart {
@@ -282,6 +299,18 @@ footer .social:hover {
      <a href="https://instagram.com/vers.shoestore" target="_blank">
       <i class="fab fa-instagram"></i> Instagram
     </a> 
+    <div id="cart-icon" onclick="toggleCart()" style="cursor: pointer; font-size: 24px; float: right;">
+    🛒 <span id="cart-count">0</span>
+</div>
+
+<div id="cart-sidebar">
+    <button onclick="toggleCart()">Close</button>
+    <h2>Your Cart</h2>
+    <div id="cart-items" style="flex-grow: 1;"></div>
+    <button onclick="sendToInstagram()" style="background: #e1306c; color: white; width: 100%; padding: 10px;">
+        Buy Now (DM on Instagram)
+    </button>
+</div>
   </nav>
   <section class="products">
   <h2>Our Shoes</h2>
@@ -544,9 +573,34 @@ function toggleDetails(id) {
     <a href="https://instagram.com/vers.shoestore" target="_blank">
       <i class="fab fa-instagram"></i> Instagram
     </a>
+    <script>
+let cart = [];
+
+function addToCart(name, price) {
+    cart.push({ name, price });
+    document.getElementById('cart-count').innerText = cart.length;
+    updateCartUI();
+}
+
+function toggleCart() {
+    const sidebar = document.getElementById('cart-sidebar');
+    sidebar.style.right = sidebar.style.right === "0px" ? "-300px" : "0px";
+}
+
+function updateCartUI() {
+    const list = document.getElementById('cart-items');
+    list.innerHTML = cart.map(item => `<p>${item.name} - ${item.price}</p>`).join('');
+}
+
+function sendToInstagram() {
+    const msg = encodeURIComponent("I want to`http buy: " + cart.map(i => i.name).join(", "));
+    window.location.href ="https://instagram.com/vers.shoestore"?text=${msg}`;
+}
+</script>
   </footer>
 </body>
 </html>
+
 
 
 
