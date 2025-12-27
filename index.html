@@ -591,20 +591,12 @@ function toggleDetails(id) {
 let cart = [];
 
 function addToCart(name, price, imageUrl) {
-    // 1. Get the size from the dropdown
-    const size = document.getElementById('size-dropdown').value;
+    const sizeElement = document.getElementById('size-dropdown');
+    const size = sizeElement ? sizeElement.value : "Not Selected";
     
-    // 2. Add everything to the cart array
     cart.push({ name, price, size, imageUrl });
-    
-    // 3. Update the UI
-    updateCartul();
+    updateCartUI(); // Make sure this name matches the function below!
 }
-<select id="size-dropdown">
-    <option value="UK 7">UK 7</option>
-    <option value="UK 8">UK 8</option>
-    <option value="UK 9">UK 9</option>
-</select>
 
 function toggleCart() {
     const sidebar = document.getElementById('cart-sidebar');
@@ -613,25 +605,24 @@ function toggleCart() {
 
 function updateCartUI() {
     const list = document.getElementById('cart-items');
-   list.innerHTML = cart.map(item => `<p>${item.name}- ${item.price}</p>`).join('');
+    const count = document.getElementById('cart-count');
+    
+    list.innerHTML = cart.map(item => `<p>${item.name} - ₹${item.price} (Size: ${item.size})</p>`).join('');
+    count.innerText = cart.length;
 }
+
 function sendToWhatsApp() {
-    const phone = "919497713316"; // Your actual WhatsApp number
-    
-    // This part creates a list of everything in the cart with their size and image
-    const itemsMessage = cart.map(i => 
-        `*Product:* ${i.name}%0A*Size:* ${i.size}%0A*Link:* ${i.imageUrl}`
-    ).join('%0A%0A');
-    
+    const phone = "919497713316"; 
+    const itemsMessage = cart.map(i => `*Product:* ${i.name}%0A*Size:* ${i.size}%0A*Link:* ${i.imageUrl}`).join('%0A%0A');
     const text = `Hello! I want to buy:%0A%0A${itemsMessage}`;
     const wpLink = `https://api.whatsapp.com/send?phone=${phone}&text=${text}`;
-    
     window.open(wpLink, '_blank');
 }
 </script>
   </footer>
 </body>
 </html>
+
 
 
 
