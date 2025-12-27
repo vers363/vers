@@ -314,8 +314,8 @@ footer .social:hover {
     <button onclick="toggleCart()">Close</button>
     <h2>Your Cart</h2>
     <div id="cart-items" style="flex-grow: 1;"></div>
-    <button onclick="sendToInstagram()" style="background: #e1306c; color: white; width: 100%; padding: 10px;">
-        Buy Now (DM on Instagram)
+    <button onclick="sendTowhatsApp()" style="background: #e1306c; color: white; width: 100%; padding: 10px;">
+        Buy Now (on Whatsapp)
     </button>
 </div>
   </nav>
@@ -588,10 +588,16 @@ function toggleDetails(id) {
     <script>
 let cart = [];
 
-function addToCart(name, price) {
-    cart.push({ name, price });
-    document.getElementById('cart-count').innerText = cart.length;
-    updateCartUI();
+function addToCart(name, price, imageUrl) {
+    // 1. Get the size from the dropdown
+    const size = document.getElementById('size-dropdown').value;
+    
+    // 2. Add everything to the cart array
+    cart.push({ name, price, size, imageUrl });
+    
+    // 3. Update the UI
+    updateCart();
+}
 }
 
 function toggleCart() {
@@ -603,15 +609,23 @@ function updateCartUI() {
     const list = document.getElementById('cart-items');
    list.innerHTML = cart.map(item => `<p>${item.name}- ${item.price}</p>`).join('');
 }
-
-function sendToInstagram() {
-   const msg = encodeURIComponent("I want to buy: " + cart.map(i => i.name).join(", "));
-window.location.href = "https://instagram.com/vers.shoestore?text=" + msg;
+function sendToWhatsApp() {
+    const phone = "919497713316"; 
+    
+    // This gathers all items in your cart
+    const itemsMessage = cart.map(i => `* ${i.name} (Size: ${i.size || 'Not Selected'})`).join('%0A');
+    
+    const text = `Hello! I want to buy:%0A${itemsMessage}`;
+    const wpLink = `https://api.whatsapp.com/send?phone=${phone}&text=${text}`;
+    
+    window.open(wpLink, '_blank');
 }
+
 </script>
   </footer>
 </body>
 </html>
+
 
 
 
