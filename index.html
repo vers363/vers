@@ -598,9 +598,13 @@ function addToCart(name, price, imageUrl) {
     cart.push({ name, price, size, imageUrl });
     
     // 3. Update the UI
-    updateCart();
+    updateCartul();
 }
-}
+<select id="size-dropdown">
+    <option value="UK 7">UK 7</option>
+    <option value="UK 8">UK 8</option>
+    <option value="UK 9">UK 9</option>
+</select>
 
 function toggleCart() {
     const sidebar = document.getElementById('cart-sidebar');
@@ -628,6 +632,7 @@ function sendToWhatsApp() {
   </footer>
 </body>
 </html>
+
 
 
 
