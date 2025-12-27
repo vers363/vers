@@ -340,7 +340,9 @@ footer .social:hover {
         </div>
       </div>
       
-      <button class="add-to-cart" onclick="addToCart('AIR force', '₹2,199')">Add to Cart</button>
+     <button onclick="addToCart('Air Force 1', 3000, 'https://your-site.vercel.app/images/airforce-1.jpg')">
+    Add to Cart
+</button>
     </div>
   </div>
 
@@ -610,21 +612,23 @@ function updateCartUI() {
    list.innerHTML = cart.map(item => `<p>${item.name}- ${item.price}</p>`).join('');
 }
 function sendToWhatsApp() {
-    const phone = "919497713316"; 
+    const phone = "919497713316"; // Your actual WhatsApp number
     
-    // This gathers all items in your cart
-    const itemsMessage = cart.map(i => `* ${i.name} (Size: ${i.size || 'Not Selected'})`).join('%0A');
+    // This part creates a list of everything in the cart with their size and image
+    const itemsMessage = cart.map(i => 
+        `*Product:* ${i.name}%0A*Size:* ${i.size}%0A*Link:* ${i.imageUrl}`
+    ).join('%0A%0A');
     
-    const text = `Hello! I want to buy:%0A${itemsMessage}`;
+    const text = `Hello! I want to buy:%0A%0A${itemsMessage}`;
     const wpLink = `https://api.whatsapp.com/send?phone=${phone}&text=${text}`;
     
     window.open(wpLink, '_blank');
 }
-
 </script>
   </footer>
 </body>
 </html>
+
 
 
 
