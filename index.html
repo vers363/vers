@@ -314,8 +314,8 @@ footer .social:hover {
     <button onclick="toggleCart()">Close</button>
     <h2>Your Cart</h2>
     <div id="cart-items" style="flex-grow: 1;"></div>
-    <button onclick="sendTowhatsApp()" style="background: #e1306c; color: white; width: 100%; padding: 10px;">
-        Buy Now (on whatsapp)
+    <button onclick="sendToWhAtsApp()" style="background: #e1306c; color: white; width: 100%; padding: 10px;">
+        Buy Now (on WhatsApp)
     </button>
 </div>
   </nav>
@@ -340,7 +340,9 @@ footer .social:hover {
         <option value="10">10</option>
     </select>
 </div>
-     <button onclick="addToCart('Air Force 1', 3000, 'https://your-site.vercel.app/images/air-force-1.jpg')"> </button>
+    <button class="add-to-cart-btn" onclick="addToCart('AIR Force', 2199, 'https://vers-virid.vercel.app/images/air-force-1.jpg')" style="width: 100%; padding: 10px; background: black; color: white; cursor: pointer;">
+    Add to Cart
+</button>
     </div>
   </div>
 
@@ -626,6 +628,7 @@ function sendToWhatsApp() {
   </footer>
 </body>
 </html>
+
 
 
 
