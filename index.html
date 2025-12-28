@@ -369,11 +369,6 @@ footer .social:hover {
   </div>
 
   </div>
-    
-     
-      <button class="add-to-cart" onclick="addToCart('NEW BALANCE', '₹3,3,000')">Add to Cart</button>
-    </div>
-  </div>
 
   </div>
 
@@ -387,16 +382,17 @@ footer .social:hover {
       <h3>nike jordan</h3>
       <p class="price">₹2,799</p>
       
-      <div class="variant-section">
-        <p><strong>Sizes:</strong> 7, 8, 9, 10</p>
-        <div class="color-row">
-          <strong>Colors:</strong> 
-          <span class="color-circle blue"></span> blue
-        </div>
-      </div>
-      
-     
-      <button class="add-to-cart" onclick="addToCart('NIKE JORDAN', '₹2,799')">Add to Cart</button>
+       <div class="variant-section">
+    <p><strong>Select Size:</strong></p>
+    <select id="size-dropdown" style="padding: 5px; width: 100%; margin-bottom: 10px;">
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+    </select>
+         
+     <button class="add-to-cart-btn" onclick="addToCart('AIR Force', 2199, 'https://vers-virid.vercel.app/css image/joordan-blue.jpg')" style="width: 100%; padding: 10px; background: black; color: white; cursor: pointer;">
+   ADD TO CART
     </div>
   </div>
 
@@ -408,16 +404,17 @@ footer .social:hover {
       <h3>New Balance</h3>
       <p class="price">₹3,000</p>
       
-      <div class="variant-section">
-        <p><strong>Sizes:</strong> 6, 7, 8, 9, 10</p>
-        <div class="color-row">
-          <strong>Colors:</strong> 
-          <span class="color-circle white"></span> White
-        </div>
-      </div>
-      
-    
-      <button class="add-to-cart" onclick="addToCart('NEW BALANCE', '₹3,000')">Add to Cart</button> 
+        <div class="variant-section">
+    <p><strong>Select Size:</strong></p>
+    <select id="size-dropdown" style="padding: 5px; width: 100%; margin-bottom: 10px;">
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+    </select>
+          
+       <button class="add-to-cart-btn" onclick="addToCart('AIR Force', 2199, 'https://vers-virid.vercel.app/css image/new-balance-white.jpg')" style="width: 100%; padding: 10px; background: black; color: white; cursor: pointer;">
+   ADD TO CART    
     </div>
   </div>
   
@@ -445,8 +442,8 @@ footer .social:hover {
         </div>
       </div>
       
-      
-      <button class="add-to-cart" onclick="addToCart('NIKE JORDAN', '₹2,799')">Add to Cart</button>
+      <button class="add-to-cart-btn" onclick="addToCart('AIR Force', 2199, 'https://vers-virid.vercel.app/css image/new-balance-white.jpg')" style="width: 100%; padding: 10px; background: black; color: white; cursor: pointer;">
+   ADD TO CART  
     </div>
   </div>
 
@@ -630,6 +627,7 @@ function sendToWhatsApp() {
   </footer>
 </body>
 </html>
+
 
 
 
